@@ -1,56 +1,62 @@
-class Stack{
+package com.demo.Stack;
 
-  int maxSize;
-  int[] arrayStack;
-  int top;
+public class Stack {
+	
 
-  public Stack(int maxsize){
-    this.maxSize = maxSize;
-    this.arrayStack = new int(maxSize);
-    this.top=-1;
-  }
+	  int maxSize;
+	  int[] arrayStack;
+	  int top;
 
-  public boolean isEmpty(){
-    return top ==-1;
-  }
+	  public Stack(int maxsize){
+	    this.maxSize = maxsize;
+	    this.arrayStack = new int[maxSize];
+	    this.top=-1;
+	  }
 
-  public boolean isFull(){
-    return top == maxSize-1;
-  }
-  
-  public void push(int value){
-    if(isFull()){
-      System.out.println("Stack Overflow-----------");
-      return;
-    }
-    arrayStack[++top]= value;
-  }
+	  public boolean isEmpty(){
+	    return top ==-1;
+	  }
 
-  public int pop(){
-    if(isEmpty()){
-      System.out.println("Stack Underflow----------");
-    }
-    int value= arrayStack[top--];
-    return value;
-  }
+	  public boolean isFull(){
+	    return top == maxSize-1;
+	  }
+	  
+	  public void push(int value){
+	    if(isFull()){
+	      System.out.println("Stack Overflow-----------");
+	      return;
+	    }
+	    arrayStack[++top]= value;
+	  }
 
-  public int size(){
-    return top+1;
-  }
+	  public int pop(){
+	    if(isEmpty()){
+	      System.out.println("Stack Underflow----------");
+	    }
+	    int value= arrayStack[top--];
+	    return value;
+	  }
 
-  public static void printStack(int[] arrayStack){
-    for(int ele : arrayStack){
-      System.out.println(ele);
-    }
-  }
+	  public int size(){
+	    return top+1;
+	  }
 
-  public static void main (String[] args){
+	  public static void printStack(int[] arrayStack){
+	    for(int ele : arrayStack){
+	      System.out.println(ele);
+	    }
+	  }
 
-    Stack st = new Stack(5);
-    st.push(50);
-    st.push(30);
-    st.push(10);
-    st.pop();
-    st.pop();
-  }
+
+	public static void main(String[] args) {
+		
+		Stack st = new Stack(5);
+	    st.push(50);
+	    st.push(30);
+	    st.push(10);
+	    st.pop();
+	    st.pop();
+		
+	}
+
 }
